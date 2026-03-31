@@ -1,8 +1,10 @@
 import streamlit as st
 import pickle
 import pandas as pd
-import matplotlib.pyplot as plt
 import numpy as np
+import matplotlib
+matplotlib.use('Agg')  # Use Agg backend before importing pyplot
+import matplotlib.pyplot as plt
 
 # Set page configuration
 st.set_page_config(
