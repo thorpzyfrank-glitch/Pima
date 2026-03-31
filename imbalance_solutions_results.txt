@@ -1,0 +1,38 @@
+================================================================================
+PIMA DIABETES - CLASS IMBALANCE SOLUTIONS COMPARISON
+================================================================================
+
+ORIGINAL DATASET:
+  Total Samples: 768
+  Diabetes Cases (Positive): 268
+  Non-Diabetes Cases (Negative): 500
+  Imbalance Ratio: 1.87:1
+
+RESAMPLING TECHNIQUES APPLIED:
+1. No Resampling (Baseline)
+2. SMOTE (Creates synthetic minority samples)
+   - Training Samples: 800
+3. Random Over Sampler (Duplicates minority samples)
+   - Training Samples: 800
+
+RESULTS BY TECHNIQUE:
+                     Accuracy  Precision    Recall  F1-Score   AUC-ROC
+Technique                                                             
+No Resampling        0.743506   0.650145  0.578704  0.611922  0.816435
+Random Over Sampler  0.738636   0.596576  0.800926  0.681973  0.819792
+SMOTE                0.735390   0.589899  0.814815  0.683946  0.814421
+
+DETAILED RESULTS:
+          Technique               Model  Accuracy  Precision   Recall  F1-Score  AUC-ROC  Train Samples  Minority (Train)  Majority (Train)
+      No Resampling Logistic Regression  0.707792   0.600000 0.500000  0.545455 0.820185            614               214               400
+      No Resampling       Random Forest  0.753247   0.673913 0.574074  0.620000 0.812963            614               214               400
+      No Resampling            AdaBoost  0.759740   0.666667 0.629630  0.647619 0.829630            614               214               400
+      No Resampling                 SVM  0.753247   0.660000 0.611111  0.634615 0.802963            614               214               400
+              SMOTE Logistic Regression  0.746753   0.600000 0.833333  0.697674 0.820185            800               400               400
+              SMOTE       Random Forest  0.759740   0.623188 0.796296  0.699187 0.820833            800               400               400
+              SMOTE            AdaBoost  0.740260   0.592105 0.833333  0.692308 0.827407            800               400               400
+              SMOTE                 SVM  0.694805   0.544304 0.796296  0.646617 0.789259            800               400               400
+Random Over Sampler Logistic Regression  0.740260   0.589744 0.851852  0.696970 0.821852            800               400               400
+Random Over Sampler       Random Forest  0.746753   0.622951 0.703704  0.660870 0.814815            800               400               400
+Random Over Sampler            AdaBoost  0.753247   0.611111 0.814815  0.698413 0.834722            800               400               400
+Random Over Sampler                 SVM  0.714286   0.562500 0.833333  0.671642 0.807778            800               400               400

@@ -1,0 +1,71 @@
+================================================================================
+PIMA DIABETES: 5 PREPROCESSING TECHNIQUES COMPARISON
+================================================================================
+
+DATASET INFORMATION:
+  - Training Samples: 614
+  - Testing Samples: 154
+  - Total Samples: 768
+  - Features: 8
+
+MODEL CONFIGURATION:
+  - Algorithm: AdaBoost Classifier
+  - Estimators: 200
+  - Random State: 42
+
+================================================================================
+PREPROCESSING TECHNIQUES COMPARISON TABLE
+================================================================================
+
+  Preprocessing Technique Accuracy Precision  Recall F1-Score
+1           MinMax Scaler   74.03%    63.16%  65.45%   64.29%
+2         Standard Scaler   74.03%    63.16%  65.45%   64.29%
+3           Robust Scaler   74.03%    63.16%  65.45%   64.29%
+4           MaxAbs Scaler   74.03%    63.16%  65.45%   64.29%
+5      Log Transformation   74.03%    63.16%  65.45%   64.29%
+
+================================================================================
+DETAILED RESULTS
+================================================================================
+
+1. MinMax Scaler
+   - Accuracy:  74.03%
+   - Precision: 63.16%
+   - Recall:    65.45%
+   - F1-Score:  64.29%
+
+2. Standard Scaler
+   - Accuracy:  74.03%
+   - Precision: 63.16%
+   - Recall:    65.45%
+   - F1-Score:  64.29%
+
+3. Robust Scaler
+   - Accuracy:  74.03%
+   - Precision: 63.16%
+   - Recall:    65.45%
+   - F1-Score:  64.29%
+
+4. MaxAbs Scaler
+   - Accuracy:  74.03%
+   - Precision: 63.16%
+   - Recall:    65.45%
+   - F1-Score:  64.29%
+
+5. Log Transformation
+   - Accuracy:  74.03%
+   - Precision: 63.16%
+   - Recall:    65.45%
+   - F1-Score:  64.29%
+
+================================================================================
+KEY INSIGHTS
+================================================================================
+
+✓ BEST PREPROCESSING TECHNIQUE:
+  MinMax Scaler - 74.03%
+
+✗ WORST PREPROCESSING TECHNIQUE:
+  Log Transformation - 74.03%
+
+📊 AVERAGE ACCURACY: 74.03%

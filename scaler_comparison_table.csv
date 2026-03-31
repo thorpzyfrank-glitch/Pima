@@ -1,0 +1,6 @@
+Preprocessing Technique,Accuracy,Precision,Recall,F1-Score
+MinMax Scaler,74.03%,63.16%,65.45%,64.29%
+Standard Scaler,74.03%,63.16%,65.45%,64.29%
+Robust Scaler,74.03%,63.16%,65.45%,64.29%
+MaxAbs Scaler,74.03%,63.16%,65.45%,64.29%
+Log Transformation,74.03%,63.16%,65.45%,64.29%
