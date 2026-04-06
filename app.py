@@ -2,6 +2,7 @@ import streamlit as st
 import pickle
 import pandas as pd
 import numpy as np
+from pathlib import Path
 import matplotlib
 matplotlib.use('Agg')  # Use Agg backend before importing pyplot
 import matplotlib.pyplot as plt
@@ -65,12 +66,18 @@ st.markdown("""
 st.markdown('<div class="main-title">🤖 Classification Models Comparison</div>', unsafe_allow_html=True)
 st.markdown("**Pima Indians Diabetes - With & Without MinMaxScaler**")
 
-# Load accuracy data
-with open('accuracies.pkl', 'rb') as f:
-    accuracies_unscaled = pickle.load(f)
+# Load accuracy data from file-relative paths so deployment cwd changes do not break the app.
+BASE_DIR = Path(__file__).resolve().parent
 
-with open('accuracies_scaled.pkl', 'rb') as f:
-    accuracies_scaled = pickle.load(f)
+try:
+    with (BASE_DIR / 'accuracies.pkl').open('rb') as f:
+        accuracies_unscaled = pickle.load(f)
+
+    with (BASE_DIR / 'accuracies_scaled.pkl').open('rb') as f:
+        accuracies_scaled = pickle.load(f)
+except FileNotFoundError as exc:
+    st.error(f"Required data file is missing: {exc.filename}")
+    st.stop()
 
 # Create comparison dataframe
 comparison_data = []
